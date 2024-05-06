@@ -1,0 +1,31 @@
+{
+  "name": "safra-drex",
+  "version": "1.0.0",
+  "description": "Safra drex project",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx hardhat test",
+    "node": "npx hardhat node",
+    "ignition:hardhat": "sh deploy.sh hardhat"
+  },
+  "keywords": [
+    "drex",
+    "solidity",
+    "drex"
+  ],
+  "author": "erionrb",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ignition-ethers": "^0.15.1",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@nomicfoundation/hardhat-ignition": "^0.15.1",
+    "@nomicfoundation/ignition-core": "^0.15.1",
+    "@openzeppelin/contracts": "^5.0.2",
+    "dotenv": "^16.4.5"
+  }
+}
