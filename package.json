@@ -1,12 +1,14 @@
 {
-  "name": "safra-drex",
+  "name": "drex-project-sample",
   "version": "1.0.0",
-  "description": "Safra drex project",
+  "description": "Drex Project Sample",
   "main": "index.js",
   "scripts": {
     "test": "npx hardhat test",
     "node": "npx hardhat node",
-    "ignition:hardhat": "sh deploy.sh hardhat"
+    "ignition:hardhat": "sh deploy.sh hardhat",
+    "ignition:besu": "sh deploy.sh besu"
+
   },
   "keywords": [
     "drex",
