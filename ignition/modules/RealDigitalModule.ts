@@ -1,22 +1,22 @@
 import { buildModule } from "@nomicfoundation/hardhat-ignition/modules";
 import AddressDiscoveryModule from "./AddressDiscoveryModule";
-import addressDiscoveryUtils from "../../scripts/AddressDiscoveryUtils";
+import addressDiscoveryUtils from "../../utils/AddressDiscoveryUtils";
 
 export default buildModule("RealDigitalModule", (m) => {
-  const authority = m.getAccount(0);
-  const admin = m.getAccount(1);
+  const admin = m.getAccount(0);
+
+  const { addressDiscovery } = m.useModule(AddressDiscoveryModule);
 
   const realDigital = m.contract("RealDigital", [
     "Real Digital",
     "BRL",
-    authority,
+    admin,
     admin,
   ]);
 
-  const { addressDiscovery } = m.useModule(AddressDiscoveryModule);
   const encryptedContractName =
     addressDiscoveryUtils.getEncryptedContractName("RealDigital");
-    
+
   m.call(addressDiscovery, "updateAddress", [
     encryptedContractName,
     realDigital,

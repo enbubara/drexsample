@@ -7,8 +7,8 @@
     "test": "npx hardhat test",
     "node": "npx hardhat node",
     "ignition:hardhat": "sh deploy.sh hardhat",
-    "ignition:besu": "sh deploy.sh besu"
-
+    "ignition:besu": "sh deploy.sh besu",
+    "deploy:real-tokenizado": "npx hardhat ignition deploy ./ignition/modules/RealTokenizadoModule.ts --network hardhat"
   },
   "keywords": [
     "drex",

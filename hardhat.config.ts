@@ -8,7 +8,7 @@ const config = {
   solidity: "0.8.20",
   networks: {
     hardhat: {
-      chainId: 1337,
+      chainId: 8545,
       // accounts: [AUTHORITY_KEY, ADMIN_KEY],
     },
     besu: {

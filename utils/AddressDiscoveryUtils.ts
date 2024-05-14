@@ -13,7 +13,9 @@ const __getAddressDiscoveryContractName = (humanReadableName: string) => {
     );
   }
 
-  return ethers.keccak256(ethers.toUtf8Bytes(humanReadableName));
+  const name = ethers.keccak256(ethers.toUtf8Bytes(humanReadableName));
+  console.log("Encrypted name for ", humanReadableName, "is", name);
+  return name;
 };
 
 const __addToAddressDiscovery = async (

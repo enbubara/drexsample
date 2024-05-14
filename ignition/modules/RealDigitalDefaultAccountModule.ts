@@ -1,16 +1,17 @@
 import { buildModule } from "@nomicfoundation/hardhat-ignition/modules";
 import AddressDiscoveryModule from "./AddressDiscoveryModule";
-import addressDiscoveryUtils from "../../scripts/AddressDiscoveryUtils";
+import addressDiscoveryUtils from "../../utils/AddressDiscoveryUtils";
+import RealDigitalModule from "./RealDigitalModule";
 
 export default buildModule("RealDigitalDefaultAccountModule", (m) => {
-  const authority = m.getAccount(0);
-  const admin = m.getAccount(1);
-
+  const admin = m.getAccount(0);
 
   const { addressDiscovery } = m.useModule(AddressDiscoveryModule);
+
+  const { realDigital } = m.useModule(RealDigitalModule);
   const realDigitalDefaultAccount = m.contract("RealDigitalDefaultAccount", [
-    addressDiscovery,
-    authority,
+    realDigital,
+    admin,
     admin,
   ]);
 
@@ -23,5 +24,5 @@ export default buildModule("RealDigitalDefaultAccountModule", (m) => {
     realDigitalDefaultAccount,
   ]);
 
-  return { realDigitalDefaultAccount };
+  return { realDigital, realDigitalDefaultAccount };
 });
