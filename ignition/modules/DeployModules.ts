@@ -6,6 +6,7 @@ import SwapOneStepModule from "./SwapOneStepModule";
 import SwapTwoStepsModule from "./SwapTwoStepsModule";
 import RealDigitalDefaultAccountModule from "./RealDigitalDefaultAccountModule";
 import RealDigitalEnableAccountModule from "./RealDigitalEnableAccountModule";
+import STRModule from "./STRModule";
 
 export default buildModule("DeployModule", (m) => {
   const { addressDiscovery } = m.useModule(AddressDiscoveryModule);
@@ -31,6 +32,8 @@ export default buildModule("DeployModule", (m) => {
   const { swapTwoSteps } = m.useModule(SwapTwoStepsModule);
   swapTwoSteps.dependencies.add(addressDiscovery).add(realDigital);
 
+  const { str } = m.useModule(STRModule);
+
   return {
     addressDiscovery,
     realDigital,
@@ -39,5 +42,6 @@ export default buildModule("DeployModule", (m) => {
     swapTwoSteps,
     realDigitalDefaultAccount,
     realDigitalEnableAccount,
+    str,
   };
 });
