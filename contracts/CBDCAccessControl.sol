@@ -53,6 +53,7 @@ abstract contract CBDCAccessControl is AccessControl {
         _grantRole(PAUSER_ROLE, _authority);
         _grantRole(MOVER_ROLE, _authority);
         _grantRole(ACCESS_ROLE, _authority);
+         _grantRole(ACCESS_ROLE, _admin);
         _grantRole(FREEZER_ROLE, _authority);
     }
 

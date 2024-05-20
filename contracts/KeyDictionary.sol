@@ -3,6 +3,7 @@ pragma solidity ^0.8.20;
 pragma experimental ABIEncoderV2;
 
 import "./RealDigital.sol";
+import "hardhat/console.sol";
 
 /**
  * @title KeyDictionary

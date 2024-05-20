@@ -9,6 +9,7 @@ import addressDiscoveryUtils from "../../utils/AddressDiscoveryUtils";
 export default buildModule("RealTokenizadoModule", (m) => {
   const admin = m.getAccount(0);
   const authority = m.getAccount(1);
+
   const bank = m.getParameter("bank");
   const cnpj = m.getParameter("cnpj");
 

@@ -4,6 +4,7 @@ import addressDiscoveryUtils from "../../utils/AddressDiscoveryUtils";
 
 export default buildModule("RealDigitalModule", (m) => {
   const admin = m.getAccount(0);
+  const authority = m.getAccount(1);
 
   const { addressDiscovery } = m.useModule(AddressDiscoveryModule);
 
@@ -21,6 +22,8 @@ export default buildModule("RealDigitalModule", (m) => {
     encryptedContractName,
     realDigital,
   ]);
+
+  m.call(realDigital, "enableAccount", [admin]);
 
   return { realDigital };
 });
